@@ -1,0 +1,143 @@
+<script>
+   // this is the concepts of template string 
+     var nam = 'pradyut';
+    let name =(name) => {return `hello name is ${name}`};
+   document.write(name('pradyut'));
+   document.write(typeof name);
+
+   let a = 'ram';
+   document.write(`hello this is the value is '${a}'<br>`);
+// this is the second concept on rest operator
+   function calc(name,dept,...args){
+      let sum = 0;
+      document.write(`the name is ${name} of ${dept} and calculations is:`);
+      for(let i in args){
+         sum += args[i];
+      }
+      document.write(sum + "<br>");
+   }
+   calc('pradyut','Magento',20,30,50);
+   calc('ram','java',10,25,41);
+   calc('sam','php',56,12,36);
+
+   // the example of spread operator
+
+   function operation(name,...args){
+     document.write(`the details is ${name}`);
+     let summ = 0;
+     for(let j in args){
+      summ += args[j];
+     }
+     document.write(summ + "<br>");
+
+   }
+   let arr = [20,50,70,90];
+   operation('newname',...arr);
+
+   var demo = "hello javascript";
+   var test = "new string here";
+   document.write('this is result' + demo + test + "<br>");
+   
+   document.write(`this is developer ${demo} ${test}`);
+   
+   //Another example of spread operator where we can easily add two arrays without push 
+
+   let arr1 = [15,16,17];
+   let arr2 =[8,9];
+   let arr3 = [...arr1, ...arr2];
+   document.write(arr3);
+
+// The example of object literals
+
+let fname = "rabin";
+let lname = "singh";
+let course = "Btech";
+
+function detail(fname,lname ,course){
+   let fullname = fname + " " + lname;
+   return {fullname,course};
+}
+let obj = detail(fname,lname,course);
+document.write(obj.fullname, obj.course);
+
+// Another Example of object literals
+
+let n = "pname";
+
+let object = {
+   [n] : "sunil",
+   title : "patra",
+    check : function(){
+      return `The name is ${this.pname} and the title is ${this.title}`;
+   }
+}
+console.log(object);
+console.log(object.check());
+
+// The example of destructuring array
+
+let user = ['ravi', 56];
+let[sname,age] = user;
+console.log(sname);
+console.log(age);
+
+// if some cases the value is not assigned so in that case we fix a pre value
+
+let pre = ['akash',45];
+let[tname,nage,dept = 'magento'] = pre;
+console.log(dept);
+
+// we can also use nested array and fetch the value also
+
+let nes = ['krishna',69,['male',25000]];
+let[mname,page,[gender,salary]] = nes;
+console.log(salary);
+
+//The example of destructuring object
+
+let objdes = {
+   ename : 'rahul',
+   roll : 25
+}
+let{ename,roll} = objdes;
+console.log(ename);
+
+// oops concepts in js
+
+class hello{
+   
+   constructor(name){
+      this.student = name;
+   }
+   message(){
+      document.write(`this is the constructor function and name is: ${this.student}`);
+   }
+   static staticMethod(){
+      document.write('this is static method');
+   }
+}
+
+let obj3 = new hello('abhi');
+obj3.message();
+// whenever we want to call static method we don't need to create object of the class
+
+   hello.staticMethod();
+
+   // The inheritance concepts in js
+
+   class test1{
+      constructor(data){
+         this.data = data;
+         document.write(`this is the collection of ${this.data}`);
+      }
+   }
+   class root extends test1{
+       info(){
+         document.write('hello this is the information');
+       }
+   }
+   let inh = new root('datacollection');
+
+   
+
+</script>
